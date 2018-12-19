@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(MainActivity.this).setTitle("Result").setMessage( calcRate() ).setPositiveButton("OK",null).show();
+                new AlertDialog.Builder(MainActivity.this).setTitle(R.string.result).setMessage( calcRate() ).setPositiveButton(R.string.ok,null).show();
             }
         });
     }
@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         S_nt = ntd.getText().toString();
         try{
             us = (Float.parseFloat(S_nt)) / US_RATE;
-            return "USD is "+us;
+            return getString(R.string.usd_is)+us;
         }catch (Exception e){
-            return "Please enter your NTD amount！";
+            return getString(R.string.please_enter_ntd);
         }
     }
 
